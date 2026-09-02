@@ -1,0 +1,42 @@
+def chatbot():
+    print("Welcome to ShopEasy Customer Support!")
+    print("How can I help you today?")
+
+    while True:
+        user_input = input("You: ").lower()
+
+        # Greeting
+        if any(word in user_input for word in ["hi", "hello", "hey"]):
+            print("Bot: Hello! How can I assist you today?")
+
+        # Order Tracking
+        elif "order" in user_input and "track" in user_input:
+            print("Bot: Please provide your order ID to track your order.")
+
+        elif "where is my order" in user_input: 
+            print("Bot: Please share your order number so I can check the status.")
+
+        # Store Hours
+        elif "hours" in user_input or "open" in user_input or "close" in user_input:
+            print("Bot: Our store is open from 9 AM to 9 PM, Monday to Saturday.")
+
+        # Returns
+        elif "return" in user_input:
+            print("Bot: You can return items within 30 days of purchase with receipt.")
+
+        # Product Inquiry
+        elif "product" in user_input or "sell" in user_input:
+            print("Bot: Could you please specify the product you're looking for?")
+
+        # Goodbye
+        elif any(word in user_input for word in ["bye", "goodbye", "thanks"]):
+            print("Bot: Thank you for visiting ShopEasy! Have a great day!")
+            break
+
+        # Default response
+        else:
+            print("Bot: I'm sorry, I didn't understand that. Can you please rephrase?")
+
+# Run chatbot
+chatbot()
+
