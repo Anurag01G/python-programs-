@@ -1,0 +1,152 @@
+import math
+
+print("============== INTEGER ==============")
+a = 20
+b = 6
+
+print("a = ", a)
+print("b = ", b)
+
+print("Addition = ", a+b)
+print("Subtraction = ", a-b)
+print("Multiplication = ", a*b)
+print("Division = ", a/b)
+print("Floor Division = ", a//b)
+print("Modulus = ", a%b)
+print("Power = ", a**b)
+
+print()
+
+print("===============FLOAT=================")
+x = 15.75
+y = 4.25
+
+print("x = ", x)
+print("y = ", y)
+
+print("Addition = ", x+y)
+print("Subtraction = ", x-y)
+print("Multiplication = ", x*y)
+print("Division = ", x/y)
+
+print()
+
+print("===============COMPLEX================")
+c1 = 3+5j
+c2 = 2+4j
+
+print("c1 = ", c1)
+print("c2 = ", c2)
+
+print("Addition = ", c1+c2)
+print("Subtraction = ", c1-c2)
+print("Multiplication = ", c1*c2)
+
+print()
+
+print("================STRING================")
+name = "Python Programming"
+
+print(name)
+print("Length = ", len(name))
+print("Uppercase = ", name.upper())
+print("Lowercase = ", name.lower())
+print("Replace = ", name.replace("Python","Advanced Python"))
+print("Slice = ", name[0:6])
+
+print()
+
+print("================LIST==================")
+numbers = [10,20,30,40]
+
+print(numbers)
+numbers.append(50)
+numbers.insert(2,25)
+numbers.remove(20)
+print("Length = ", len(numbers))
+print("Maximum = ", max(numbers))
+print("Minimum = ", min(numbers))
+print("Sum = ", sum(numbers))
+
+print()
+
+print("================TUPLE=================")
+t = (100,200,300)
+
+print(t)
+print("Length = ", len(t))
+print("Maximum = ", max(t))
+print("Minimum = ", min(t))
+
+print()
+
+print("=============DICTIONARY===============")
+student = {
+    "Roll":35,
+    "Name":"Pranali",
+    "Marks":90
+}
+
+print(student)
+print(student.keys())
+print(student.values())
+print(student.items())
+
+print()
+
+print("=================SET==================")
+s = {2,4,6,8}
+
+print(s)
+s.add(10)
+print(s)
+
+print()
+
+print("==============FROZENSET===============")
+fs = frozenset([1,2,3,4,5])
+
+print(fs)
+
+print()
+
+print("================BOOLEAN===============")
+flag = True
+
+print(flag)
+print(type(flag))
+
+print()
+
+print("==============NONE TYPE================")
+value = None
+
+print(value)
+print(type(value))
+
+print()
+
+print("===========BUILT-IN FUNCTIONS==========")
+
+print(abs(-45))
+print(round(12.6789,2))
+print(pow(5,3))
+print(divmod(20,3))
+print(bin(15))
+print(hex(255))
+print(type(a))
+
+print()
+
+print("==============MATH MODULE==============")
+
+print("Square Root = ", math.sqrt(25))
+print("Factorial = ", math.factorial(5))
+print("Power = ", math.pow(2,5))
+print("Ceil = ", math.ceil(4.3))
+print("Floor = ", math.floor(4.8))
+print("Pi = ", math.pi)
+print("e = ", math.e)
+print("Sin(90) = ", math.sin(math.radians(90)))
+print("cos(0) = ", math.cos(math.radians(0)))
+print("Log = ", math.log(10))
