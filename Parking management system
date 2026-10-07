@@ -1,0 +1,50 @@
+slot = [0, 0, 0, 0, 0]
+
+while True:
+    print("\n--- Parking Management ---")
+    print("1. Park Vehicle")
+    print("2. Remove Vehicle")
+    print("3. Display Slots")
+    print("4. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        n = int(input("Enter slot (1-5): "))
+
+        if 1 <= n <= 5:
+            if slot[n - 1] == 0:
+                slot[n - 1] = 1
+                print("Vehicle parked successfully!")
+            else:
+                print("Slot already occupied!")
+        else:
+            print("Invalid slot number!")
+
+    elif choice == 2:
+        n = int(input("Enter slot (1-5): "))
+
+        if 1 <= n <= 5:
+            if slot[n - 1] == 1:
+                slot[n - 1] = 0
+                print("Vehicle removed successfully!")
+            else:
+                print("Slot is already empty!")
+        else:
+            print("Invalid slot number!")
+
+    elif choice == 3:
+        print("\n--- Slot Status ---")
+
+        for i in range(5):
+            if slot[i] == 1:
+                print("Slot", i + 1, ": Occupied")
+            else:
+                print("Slot", i + 1, ": Empty")
+
+    elif choice == 4:
+        print("Exiting program...")
+        break
+
+    else:
+        print("Invalid choice!")
