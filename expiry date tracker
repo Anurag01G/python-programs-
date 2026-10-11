@@ -1,0 +1,49 @@
+from datetime import date, datetime
+
+food_items = []
+
+while True:
+    print("\n--- Smart Food Expiry Tracker ---")
+    print("1. Add Food Item")
+    print("2. View Food Items")
+    print("3. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        name = input("Enter food name: ")
+        expiry = input("Enter expiry date (YYYY-MM-DD): ")
+
+        try:
+            expiry_date = datetime.strptime(
+                expiry, "%Y-%m-%d"
+            ).date()
+
+            food_items.append((name, expiry_date))
+            print("Food item added successfully!")
+
+        except ValueError:
+            print("Invalid date format!")
+
+    elif choice == "2":
+        if not food_items:
+            print("No food items added.")
+        else:
+            for name, expiry in food_items:
+                days = (expiry - date.today()).days
+
+                if days < 0:
+                    status = "Expired"
+                elif days <= 3:
+                    status = "Expiring Soon"
+                else:
+                    status = "Fresh"
+
+                print(name, "-", expiry, "-", status)
+
+    elif choice == "3":
+        print("Thank you!")
+        break
+
+    else:
+        print("Invalid choice!")
