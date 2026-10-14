@@ -1,0 +1,32 @@
+import random
+
+print("🎵 Mood-Based Music Recommender 🎵")
+
+mood = input("How are you feeling today? (happy/sad/relaxed/energetic): ")
+mood = mood.lower().strip()
+
+music = {
+    "happy": ["Happy - Pharrell Williams",
+              "Perfect - Ed Sheeran",
+              "Can't Stop the Feeling - Justin Timberlake"],
+
+    "sad": ["Fix You - Coldplay",
+            "Someone Like You - Adele",
+            "Let Her Go - Passenger"],
+
+    "relaxed": ["Weightless - Marconi Union",
+                "Sunflower - Post Malone",
+                "River Flows in You - Yiruma"],
+
+    "energetic": ["Believer - Imagine Dragons",
+                  "On Top of the World - Imagine Dragons",
+                  "Thunder - Imagine Dragons"]
+}
+
+if mood in music:
+    song = random.choice(music[mood])
+    print("\nYour mood:", mood.capitalize())
+    print("Recommended song:", song)
+else:
+    print("\nSorry! Mood not available.")
+    print("Please enter happy, sad, relaxed, or energetic.")
