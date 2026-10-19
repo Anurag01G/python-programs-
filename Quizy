@@ -1,0 +1,27 @@
+print("Welcome to Quiz Game!")
+
+score = 0
+
+answer = input("1. Which language is used for AI? \nA. C \nB. Python \nC. HTML\n")
+if answer.upper() == "B":
+    print("Correct!")
+    score += 1
+else:
+    print("Wrong! Correct answer is Python.")
+
+answer = input("\n2. What is the output function in Python? \nA. input() \nB. print() \nC. scan()\n")
+if answer.upper() == "B":
+    print("Correct!")
+    score += 1
+else:
+    print("Wrong! Correct answer is print().")
+
+answer = input("\n3. Which symbol is used for comments? \nA. # \nB. @ \nC. &\n")
+if answer.upper() == "A":
+    print("Correct!")
+    score += 1
+else:
+    print("Wrong! Correct answer is #.")
+
+print("\nQuiz Completed!")
+print("Your Score:", score, "/ 3")
