@@ -1,0 +1,45 @@
+
+import random
+
+print("👻 ESCAPE THE HAUNTED ROOM 👻")
+print("Find the key and escape!")
+print("You have 3 lives.")
+
+lives = 3
+key_found = False
+
+while lives > 0:
+    print("\nChoose a door:")
+    print("1. Red Door")
+    print("2. Blue Door")
+    print("3. Green Door")
+
+    choice = input("Enter your choice (1-3): ")
+
+    if choice == "1":
+        print("A ghost appears! You lose one life.")
+        lives -= 1
+
+    elif choice == "2":
+        if not key_found:
+            print("You found the golden key! 🔑")
+            key_found = True
+        else:
+            print("The room is empty.")
+
+    elif choice == "3":
+        if key_found:
+            print("You unlocked the exit! 🎉")
+            print("Congratulations! You escaped!")
+            break
+        else:
+            print("The door is locked. Find the key first!")
+
+    else:
+        print("Invalid choice! Try again.")
+
+    print("Lives remaining:", lives)
+
+if lives == 0:
+    print("Game Over! The ghosts caught you! 👻")
+    
