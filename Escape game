@@ -1,0 +1,13 @@
+import random
+
+print("👻 ESCAPE THE HAUNTED ROOM")
+print("Choose a door: 1, 2, or 3")
+
+safe = random.randint(1, 3)
+choice = int(input("Enter your door: "))
+
+if choice == safe:
+    print("🎉 You escaped! You are a survivor!")
+else:
+    print("👻 Oh no! A ghost caught you!")
+    print("The safe door was:", safe)
