@@ -1,0 +1,53 @@
+
+import random
+
+happiness = 50
+energy = 50
+hunger = 50
+
+print("===== VIRTUAL PET SIMULATOR =====")
+print("Take care of your virtual pet!")
+
+while True:
+    print("\n1. Feed Pet")
+    print("2. Play with Pet")
+    print("3. Let Pet Sleep")
+    print("4. Check Pet Status")
+    print("5. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        hunger -= 20
+        happiness += 5
+        print("Yummy! Your pet has eaten.")
+
+    elif choice == "2":
+        if energy >= 15:
+            happiness += 15
+            energy -= 15
+            hunger += 10
+            print("Your pet enjoyed playing!")
+        else:
+            print("Your pet is too tired.")
+
+    elif choice == "3":
+        energy += 20
+        print("Your pet is sleeping...")
+
+    elif choice == "4":
+        print("Happiness:", happiness)
+        print("Energy:", energy)
+        print("Hunger:", hunger)
+
+    elif choice == "5":
+        print("Goodbye! Take care of your pet.")
+        break
+
+    else:
+        print("Invalid choice. Try again.")
+
+    happiness = max(0, min(100, happiness))
+    energy = max(0, min(100, energy))
+    hunger = max(0, min(100, hunger))
+    
