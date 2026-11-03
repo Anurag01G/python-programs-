@@ -1,0 +1,40 @@
+tasks = {}
+
+while True:
+    print("\n===== SMART STUDY PLANNER =====")
+    print("1. Add Subject")
+    print("2. View Study Plan")
+    print("3. Mark Subject Completed")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        subject = input("Enter subject name: ")
+        hours = int(input("Enter study hours: "))
+
+        tasks[subject] = [hours, "Pending"]
+        print("Subject added successfully!")
+
+    elif choice == 2:
+        print("\nYour Study Plan:")
+
+        for subject, details in tasks.items():
+            print(subject, "-", details[0],
+                  "Hours -", details[1])
+
+    elif choice == 3:
+        subject = input("Enter completed subject: ")
+
+        if subject in tasks:
+            tasks[subject][1] = "Completed"
+            print("Task completed!")
+        else:
+            print("Subject not found!")
+
+    elif choice == 4:
+        print("Goodbye!")
+        break
+
+    else:
+        print("Invalid choice!")
