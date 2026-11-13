@@ -1,0 +1,60 @@
+
+import random
+
+print("================================")
+print("       HUMAN OR AI GAME")
+print("================================")
+
+questions = [
+    ["I love playing cricket with my friends.", "Human"],
+    ["Artificial intelligence is changing the world.", "AI"],
+    ["Today I forgot my lunch at home.", "Human"],
+    ["Technology helps people solve problems efficiently.", "AI"],
+    ["My dog ate my homework yesterday!", "Human"],
+    ["Machine learning is a part of artificial intelligence.", "AI"],
+    ["I really enjoyed my college trip.", "Human"],
+    ["Data analysis helps identify useful patterns.", "AI"]
+]
+
+random.shuffle(questions)
+
+score = 0
+
+for i in range(5):
+    print("\nRound", i + 1)
+    print("Message:", questions[i][0])
+
+    print("\n1. Human")
+    print("2. AI")
+
+    choice = input("Your answer: ")
+
+    if choice == "1":
+        answer = "Human"
+    elif choice == "2":
+        answer = "AI"
+    else:
+        print("Invalid choice!")
+        continue
+
+    if answer == questions[i][1]:
+        print("Correct Answer!")
+        score += 1
+    else:
+        print("Wrong Answer!")
+        print("Correct answer:", questions[i][1])
+
+print("\n================================")
+print("           GAME RESULT")
+print("================================")
+
+print("Your Score:", score, "/ 5")
+
+if score == 5:
+    print("Excellent! You are an AI Expert!")
+elif score >= 3:
+    print("Good Job! Keep Practicing!")
+else:
+    print("Try Again!")
+
+print("================================")
